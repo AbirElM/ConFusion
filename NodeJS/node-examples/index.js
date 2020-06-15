@@ -10,7 +10,7 @@ function solveRect(l,b) {
 
     rect(l,b, (err,rectangle) => {
         if (err) {
-	        console.log("ERROR: ", err.message);
+	        console.log("ERROR: ", err.message); 
 	    }
         else {
             console.log("The area of the rectangle of dimensions l = "
