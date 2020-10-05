@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/AbirElM/nodeJsApp-/issues"
   },
-  "homepage": "https://github.com/AbirElM/nodeJsApp-#readme"
+  "homepage": "https://github.com/AbirElM/nodeJsApp-#readme",
+  "keywords": [
+    "Simple",
+    "Node",
+    "Examples"
+  ]
 }
