@@ -7,38 +7,15 @@ const port = 3000;
 
 const bodyParser = require('body-parser');
 
+const dishRouter = require('./routes/dishRouter');
 
 const app = express();
 
+app.use('/dishes',dishRouter);
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.all('/dishes', (req,res,next)=>{ /******Specifying the API endpoint*/ 
-    res.statusCode= 200;
-    res.setHeader('Content-Type','text/plain');
-    next(); /*Looks for additional specification matching the dishes endpoint*/
-    /* i.e app.get() */
-}); 
 
-app.get('/dishes',(req,res,next)=>{
-    res.end('Will send all the dishes to you !');
-});
-
-app.post('/dishes',(req,res,next)=>{
-    /* Will carry some info in the body */
-    res.end('Will add the dish'+ req.body.name + 'with details' + req.body.description);
-}); /*  */
-
-
-app.put('/dishes',(req,res,next)=>{
-    /* Will carry some info in the body */
-    res.statusCode = 403; 
-    res.end('Put operation not supported on dishes');
-});
-
-app.delete('/dishes',(req,res,next)=>{ //! Dangerous op
-    res.end('Deleting all the dishes you !');
-});
 
 
 
