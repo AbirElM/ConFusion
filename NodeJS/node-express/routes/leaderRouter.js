@@ -1,28 +1,29 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const dishRouter = express.Router(); 
+const leaderRouter = express.Router(); 
 
-/* Handle the dishRouter ops */
 
-dishRouter.use(bodyParser.json());
+leaderRouter.use(bodyParser.json());
 
-dishRouter.route('/').all((req,res,next)=>{ /******Specifying the API endpoint*/ 
+leaderRouter.route('/').all((req,res,next)=>{ /******Specifying the API endpoint*/ 
     res.statusCode= 200;
     res.setHeader('Content-Type','text/plain');
     next(); /*Looks for additional specification matching the dishes endpoint*/
     /* i.e app.get() */
 }).get((req,res,next)=>{
-    res.end('Will send all the dishes to you !');
+    res.end('Will send all the leaders to you !');
 }).post((req,res,next)=>{
     /* Will carry some info in the body */
-    res.end('Will add the dish'+ req.body.name + 'with details' + req.body.description);
+    res.end('Will add the leader'+ req.body.name + 'with details' + req.body.description);
 }).put((req,res,next)=>{
     /* Will carry some info in the body */
     res.statusCode = 403; 
-    res.end('Put operation not supported on dishes');
+    res.end('Put operation not supported on operations');
 }).delete((req,res,next)=>{ //! Dangerous op
-    res.end('Deleting all the dishes for you !');
+    res.end('Deleting all the leaders for you !');
 });
 
-module.exports = dishRouter;
+
+module.exports = leaderRouter;

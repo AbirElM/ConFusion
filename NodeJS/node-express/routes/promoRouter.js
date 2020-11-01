@@ -1,28 +1,28 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const dishRouter = express.Router(); 
+const promoRouter = express.Router(); 
 
-/* Handle the dishRouter ops */
 
-dishRouter.use(bodyParser.json());
+promoRouter.use(bodyParser.json());
 
-dishRouter.route('/').all((req,res,next)=>{ /******Specifying the API endpoint*/ 
+promoRouter.route('/').all((req,res,next)=>{ /******Specifying the API endpoint*/ 
     res.statusCode= 200;
     res.setHeader('Content-Type','text/plain');
     next(); /*Looks for additional specification matching the dishes endpoint*/
     /* i.e app.get() */
 }).get((req,res,next)=>{
-    res.end('Will send all the dishes to you !');
+    res.end('Will send all the promotions to you !');
 }).post((req,res,next)=>{
     /* Will carry some info in the body */
-    res.end('Will add the dish'+ req.body.name + 'with details' + req.body.description);
+    res.end('Will add the promotion'+ req.body.name + 'with details' + req.body.description);
 }).put((req,res,next)=>{
     /* Will carry some info in the body */
     res.statusCode = 403; 
-    res.end('Put operation not supported on dishes');
+    res.end('Put operation not supported on operations');
 }).delete((req,res,next)=>{ //! Dangerous op
-    res.end('Deleting all the dishes for you !');
+    res.end('Deleting all the promotions for you !');
 });
 
-module.exports = dishRouter;
+
+module.exports = promoRouter;
