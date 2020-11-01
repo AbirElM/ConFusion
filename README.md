@@ -1,4 +1,4 @@
-# nodeJsApp-
+# ConFusion
 
 
 ## **Server-side Development with NodeJS, Express and MongoDB offered by the Hong Kong University of science and technology.**
